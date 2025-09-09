@@ -1,0 +1,222 @@
+{
+  "Python": [
+    {
+      "title": "Python for Everybody",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/python"
+    },
+    {
+      "title": "Automate the Boring Stuff with Python",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/automate/"
+    },
+    {
+      "title": "Introduction to Python Programming",
+      "platform": "edX",
+      "url": "https://www.edx.org/course/introduction-to-python-programming"
+    },
+    {
+      "title": "Learn Python - Full Course for Beginners [YouTube]",
+      "platform": "freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+    }
+  ],
+  "Machine Learning": [
+    {
+      "title": "Machine Learning (Andrew Ng)",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/machine-learning"
+    },
+    {
+      "title": "Intro to Machine Learning",
+      "platform": "Udacity",
+      "url": "https://www.udacity.com/course/intro-to-machine-learning--ud120"
+    },
+    {
+      "title": "Machine Learning Crash Course",
+      "platform": "Google",
+      "url": "https://developers.google.com/machine-learning/crash-course"
+    },
+    {
+      "title": "Deep Learning Specialization",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/deep-learning"
+    }
+  ],
+  "SQL": [
+    {
+      "title": "SQL for Data Science",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/sql-for-data-science"
+    },
+    {
+      "title": "The Complete SQL Bootcamp",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/the-complete-sql-bootcamp/"
+    },
+    {
+      "title": "Intro to SQL",
+      "platform": "Khan Academy",
+      "url": "https://www.khanacademy.org/computing/computer-programming/sql"
+    },
+    {
+      "title": "SQL Fundamentals",
+      "platform": "DataCamp",
+      "url": "https://www.datacamp.com/courses/intro-to-sql-for-data-science"
+    }
+  ],
+  "Data Visualization": [
+    {
+      "title": "Data Visualization with Python",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/python-for-data-visualization"
+    },
+    {
+      "title": "Data Visualization with Tableau",
+      "platform": "Udacity",
+      "url": "https://www.udacity.com/course/data-visualization-with-tableau--ud1006"
+    },
+    {
+      "title": "Fundamentals of Visualization with Tableau",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/visualization-with-tableau"
+    },
+    {
+      "title": "Interactive Data Visualization with Python",
+      "platform": "DataCamp",
+      "url": "https://www.datacamp.com/courses/interactive-data-visualization-with-python"
+    }
+  ],
+  "Deep Learning": [
+    {
+      "title": "Deep Learning Specialization",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/deep-learning"
+    },
+    {
+      "title": "Intro to Deep Learning with PyTorch",
+      "platform": "Udacity",
+      "url": "https://www.udacity.com/course/deep-learning-pytorch--ud188"
+    },
+    {
+      "title": "Practical Deep Learning for Coders",
+      "platform": "fast.ai",
+      "url": "https://course.fast.ai/"
+    },
+    {
+      "title": "Deep Learning Fundamentals",
+      "platform": "edX",
+      "url": "https://www.edx.org/learn/deep-learning"
+    }
+  ],
+  "Frontend Technologies": [
+    {
+      "title": "The Complete JavaScript Course 2024",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/the-complete-javascript-course/"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+    },
+    {
+      "title": "Modern React with Redux",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/react-redux/"
+    },
+    {
+      "title": "Frontend Developer Career Path",
+      "platform": "Codecademy",
+      "url": "https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
+    }
+  ],
+  "Backend Technologies": [
+    {
+      "title": "Backend Development with Node.js",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/server-side-nodejs"
+    },
+    {
+      "title": "Python and Django Full Stack Web Developer Bootcamp",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/"
+    },
+    {
+      "title": "Go: The Complete Developer's Guide",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/go-the-complete-developers-guide/"
+    },
+    {
+      "title": "Java Programming and Software Engineering Fundamentals",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/java-programming"
+    }
+  ],
+  "Cloud Services": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/aws-fundamentals-going-cloud-native"
+    },
+    {
+      "title": "Google Cloud Platform Fundamentals",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/gcp-fundamentals"
+    },
+    {
+      "title": "Azure Fundamentals",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/paths/azure-fundamentals/"
+    },
+    {
+      "title": "Cloud Computing Basics",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/learn/cloud-computing"
+    }
+  ],
+  "DevOps": [
+    {
+      "title": "DevOps on AWS Specialization",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/devops-on-aws"
+    },
+    {
+      "title": "Learn DevOps: The Complete Kubernetes Course",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/learn-devops-the-complete-kubernetes-course/"
+    },
+    {
+      "title": "Google IT Automation with Python",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-it-automation"
+    },
+    {
+      "title": "CI/CD Pipelines with Jenkins",
+      "platform": "Pluralsight",
+      "url": "https://www.pluralsight.com/courses/jenkins-continuous-integration-delivery"
+    }
+  ],
+  "UI/UX": [
+    {
+      "title": "Google UX Design Professional Certificate",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+    },
+    {
+      "title": "User Experience Design Essentials",
+      "platform": "Udemy",
+      "url": "https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/"
+    },
+    {
+      "title": "UX Design Fundamentals",
+      "platform": "edX",
+      "url": "https://www.edx.org/learn/ux-design"
+    },
+    {
+      "title": "Interaction Design Specialization",
+      "platform": "Coursera",
+      "url": "https://www.coursera.org/specializations/interaction-design"
+    }
+  ]
+} 

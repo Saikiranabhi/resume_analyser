@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+    <main class="main-content">
+        <div id="resume-analyzer" class="component active">
+            <div class="content-header">
+                <h1><i class="fas fa-file-alt me-2"></i>Resume Analyzer</h1>
+                <p class="mb-0 text-muted">Get AI-powered analysis of your resume</p>
+            </div>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Upload Your Resume</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="resume-form" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="resume-file" class="form-label">Upload Resume (PDF)</label>
+                                        <input class="form-control" type="file" id="resume-file" name="resume" accept=".pdf" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="target-role" class="form-label">Target Role</label>
+                                        <select id="target-role" class="form-select" name="target_role" required>
+                                            <option value="">Select a target role</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="fas fa-magic me-2"></i>Analyze Resume
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="resume-results" class="card" style="display: none;">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Analysis Results</h5>
+                                    <span id="match-percentage" class="badge bg-success fs-6"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h6>Role: <span id="result-role" class="fw-bold text-primary"></span></h6>
+                                    <div class="salary-range">
+                                        Salary Range: 
+                                        <span id="salary-entry" class="fw-bold"></span> - 
+                                        <span id="salary-lead" class="fw-bold"></span>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <div class="card border-success">
+                                            <div class="card-header bg-success text-white">
+                                                <i class="fas fa-check me-2"></i>Matched Skills
+                                            </div>
+                                            <div class="card-body">
+                                                <ul id="matched-skills" class="list-group list-group-flush"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card border-danger">
+                                            <div class="card-header bg-danger text-white">
+                                                <i class="fas fa-times me-2"></i>Missing Skills
+                                            </div>
+                                            <div class="card-body">
+                                                <ul id="missing-skills" class="list-group list-group-flush"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="improvement-plan">
+                                    <h6 class="mb-3">Improvement Plan:</h6>
+                                    <div id="improvement-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fetch roles from backend and populate target role dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/roles')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('target-role');
+                    data.roles.forEach(role => {
+                        const option = document.createElement('option');
+                        option.value = role;
+                        option.textContent = role;
+                        select.appendChild(option);
+                    });
+                });
+
+            document.getElementById('resume-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch('/upload_resume', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => displayResumeResults(data))
+                .catch(() => alert('Failed to analyze resume.'));
+            });
+        });
+
+        function displayResumeResults(data) {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            document.getElementById('resume-results').style.display = 'block';
+            document.getElementById('match-percentage').textContent = `${data.match_percentage}% Match`;
+            document.getElementById('result-role').textContent = data.role;
+            document.getElementById('salary-entry').textContent = data.salary_range.entry ? `$${data.salary_range.entry.toLocaleString()}` : '';
+            document.getElementById('salary-lead').textContent = data.salary_range.lead ? `$${data.salary_range.lead.toLocaleString()}` : '';
+            // Matched skills
+            const matchedSkillsList = document.getElementById('matched-skills');
+            matchedSkillsList.innerHTML = data.matched_skills.map(skill => 
+                `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${skill}
+                    <i class="fas fa-check text-success"></i>
+                </li>`
+            ).join('');
+            // Missing skills
+            const missingSkillsList = document.getElementById('missing-skills');
+            missingSkillsList.innerHTML = [...data.missing_required, ...data.missing_preferred].map(skill => 
+                `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${skill}
+                    <i class="fas fa-times text-danger"></i>
+                </li>`
+            ).join('');
+            // Improvement plan
+            const improvementList = document.getElementById('improvement-list');
+            improvementList.innerHTML = data.improvement_plan.map(item => {
+                const resources = item.resources && item.resources.length > 0
+                    ? `<ul>${item.resources.map(r => `<li>${r.title} (${r.platform})</li>`).join('')}</ul>`
+                    : '<span>No resources found</span>';
+                return `<div class="alert alert-info mb-2">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>${item.skill}</strong> (${item.priority})<br/>${resources}
+                </div>`;
+            }).join('');
+        }
+    </script>
+</body>
+</html>

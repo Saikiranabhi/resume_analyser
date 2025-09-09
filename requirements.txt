@@ -1,0 +1,9 @@
+# career_advisor_app/requirements.txt
+flask
+pdfplumber
+plotly
+pandas
+numpy
+wordcloud
+pillow
+gunicorn==20.1.0
