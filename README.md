@@ -64,8 +64,8 @@ Resume_analyser/
 
 ## 🌐 Links
 
-- **GitHub Repository:** [Add your repo link here]
-- **Live Demo:** [Add your live demo link here]
+- **GitHub Repository:** [https://github.com/Saikiranabhi/resume_analyser.git]
+- **Live Demo:** [https://resume-analyser-2baz.onrender.com/]
 
 ## 📝 License
 
